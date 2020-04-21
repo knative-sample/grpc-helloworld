@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package proto;
+
+service HelloService {
+    rpc Hello(HelloRequest) returns (stream HelloResponse) {};
+}
+
+
+message HelloMessage {
+  string key = 1;
+  int32 value = 2;
+}
+
+message HelloRequest {
+  HelloMessage msg = 1;
+}
+
+message HelloResponse {
+  HelloMessage msg = 1;
+}
