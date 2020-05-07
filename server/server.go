@@ -6,7 +6,6 @@ import (
 	"net"
 	"os"
 	"strconv"
-	"time"
 
 	pb "github.com/knative-sample/grpc-helloworld/proto"
 	"google.golang.org/grpc"
