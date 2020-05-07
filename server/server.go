@@ -35,24 +35,5 @@ func main() {
 }
 
 func (s *HelloService) Hello(r *pb.HelloRequest, stream pb.HelloService_HelloServer) error {
-	err := stream.Send(&pb.HelloResponse{
-		Msg: &pb.HelloMessage{
-			Key:   "first",
-			Value: int32(0),
-		},
-	})
-	time.Sleep(time.Second * time.Duration(waitTime))
-
-	err = stream.Send(&pb.HelloResponse{
-		Msg: &pb.HelloMessage{
-			Key:   "last",
-			Value: int32(1),
-		},
-	})
-	if err != nil {
-		log.Printf("Hello error:%s", err.Error())
-		return err
-	}
-
-	return nil
+	return fmt.Errorf("error hello")
 }
