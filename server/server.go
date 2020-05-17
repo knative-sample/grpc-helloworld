@@ -47,6 +47,6 @@ func (s *HelloService) Hello(r *pb.HelloRequest, stream pb.HelloService_HelloSer
 		log.Printf("Hello error:%s", err.Error())
 		return err
 	}
-
+	log.Printf("%s  --> resp index:%d", r.Msg.Key, r.Msg.Value)
 	return nil
 }
