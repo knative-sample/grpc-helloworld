@@ -39,7 +39,7 @@ func (s *HelloService) Hello(r *pb.HelloRequest, stream pb.HelloService_HelloSer
 
 	err := stream.Send(&pb.HelloResponse{
 		Msg: &pb.HelloMessage{
-			Key:   fmt.Sprintf("%s  --> resp index:%d", r.Msg.Key, r.Msg.Value),
+			Key:   fmt.Sprintf(" V2:%s  --> resp index:%d", r.Msg.Key, r.Msg.Value),
 			Value: int32(1),
 		},
 	})
